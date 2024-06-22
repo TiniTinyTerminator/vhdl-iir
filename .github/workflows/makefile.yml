@@ -31,7 +31,7 @@ jobs:
       uses: BSFishy/pip-action@v1
       with:
         # The packages to install from Pip
-        packages: cocotb 
+        packages: cocotb numpy
         
     - name: run sim
       run: make
