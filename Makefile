@@ -14,4 +14,4 @@ include $(shell cocotb-config --makefiles)/Makefile.sim
 
 # Clean up build and result files
 clean::
-	rm -rf sim_build results.xml waveform.ghw iir_filter 
+	rm -rf sim_build results.xml waveform.ghw iir_filter __pycache__

@@ -2,7 +2,7 @@ import cocotb
 from cocotb.clock import Clock
 from cocotb.triggers import RisingEdge, Timer
 import numpy as np
-# import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 
 @cocotb.test()
 async def test_iir_filter(dut):
@@ -38,7 +38,7 @@ async def test_iir_filter(dut):
         print(dut.output_sig.value)
 
         # # Read the output
-        output_sample = int(dut.output_sig.value)
+        output_sample = float(int(dut.output_sig.value))
         output_signal.append(output_sample)
 
         # Print the input and output for debugging
@@ -47,16 +47,16 @@ async def test_iir_filter(dut):
     # Convert output_signal to numpy array for easy plotting
     output_signal = np.array(output_signal)
 
-    # # Plot input and output signals
-    # plt.figure(figsize=(10, 6))
-    # plt.plot(input_signal, label="Input Signal")
-    # plt.plot(output_signal, label="Output Signal", linestyle='--')
-    # plt.title("IIR Filter Input and Output Signals")
-    # plt.xlabel("Sample Index")
-    # plt.ylabel("Amplitude")
-    # plt.legend()
-    # plt.grid(True)
-    # plt.show()
+    # Plot input and output signals
+    plt.figure(figsize=(10, 6))
+    plt.plot(input_signal, label="Input Signal")
+    plt.plot(output_signal, label="Output Signal", linestyle='--')
+    plt.title("IIR Filter Input and Output Signals")
+    plt.xlabel("Sample Index")
+    plt.ylabel("Amplitude")
+    plt.legend()
+    plt.grid(True)
+    plt.show()
 
     # Optionally: compare the output_signal with an expected output
     # (Here we are just printing the results)
