@@ -62,6 +62,3 @@ async def test_iir_filter(dut):
     # (Here we are just printing the results)
     for i, (inp, out) in enumerate(zip(input_signal, output_signal)):
         print(f"Sample {i}: Input = {inp}, Output = {out}")
-
-    # Add your verification criteria here (e.g., check if output matches expected values)
-    # assert output_signal == expected_output_signal
